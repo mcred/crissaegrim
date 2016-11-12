@@ -2,7 +2,7 @@
   "name": "crissaegrim",
   "version": "0.0.1",
   "description": "Symphony of the Night save file editor",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
