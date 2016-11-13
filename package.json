@@ -15,6 +15,8 @@
     "electron": "electron app"
   },
   "devDependencies": {
+    "@types/electron": "^1.4.26",
+    "@types/node": "^6.0.46",
     "electron-prebuilt": "^1.2.0",
     "es6-shim": "^0.35.0",
     "ts-loader": "^1.2.0",
