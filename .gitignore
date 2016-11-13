@@ -2,3 +2,4 @@ node_modules
 workfiles
 build
 npm-debug.log
+.DS_Store
