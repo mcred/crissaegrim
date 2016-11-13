@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <title>Crissaegrim: SOTN File Editor</title>
     <link rel="stylesheet" type="text/css" href="css/app.css">
+    <script>
+      const {ipcRenderer} = require('electron')
+    </script>
   </head>
   <body>
-    <a href="" id="fileselect"></a>
+    <a href="#" id="fileselect" onclick="ipcRenderer.send('showOpenDialog');"></a>
   </body>
-
+  <script src="main.js"></script>
   <script>
-    // You can also require other files to run in this process
     require('./renderer.js')
   </script>
 </html>
