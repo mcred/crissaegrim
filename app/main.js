@@ -1,9 +1,12 @@
 const electron = require('electron')
 const app = electron.app
 const BrowserWindow = electron.BrowserWindow
+const {ipcMain} = require('electron')
+const {dialog} = require('electron')
 
 const path = require('path')
 const url = require('url')
+const fs = require('fs')
 
 let mainWindow
 
@@ -36,3 +39,19 @@ app.on('activate', function () {
     createWindow()
   }
 })
+
+ipcMain.on('showOpenDialog', () => {
+  dialog.showOpenDialog((function (fileNames) {
+    if (fileNames === undefined) {
+      console.log('No file selected');
+    } else {
+      fs.readFile(fileNames[0], '', (function (err, data) {
+        if (err) {
+          this.alert(`An error ocurred reading the file : ${err.message}`);
+          return;
+        }
+        console.log(data);
+      }));
+    }
+  }));
+});
