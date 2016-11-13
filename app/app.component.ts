@@ -5,4 +5,8 @@ import { Component } from '@angular/core';
     <a href="#" id="fileselect" (click)="showOpenDialog();"></a>
   `
 })
-export class AppComponent { }
+export class AppComponent {
+  showOpenDialog() {
+    alert('hi');
+  }
+}
