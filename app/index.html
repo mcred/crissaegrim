@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Crissaegrim: SOTN File Editor</title>
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <script>
+      const {ipcRenderer} = require('electron')
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <a href="#" id="fileselect" onclick="ipcRenderer.send('showOpenDialog');"></a>
+      <app></app>
+    </div>
+    <script>
+      require("zone.js");
+    </script>
+    <script src="main.js"></script>
+    <script src="../build/common.js"></script>
+    <script src="../build/angular2.js"></script>
+    <script src="../build/app.js"></script>
+  </body>
+</html>
