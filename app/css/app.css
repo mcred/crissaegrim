@@ -1,0 +1,16 @@
+body{
+  margin:0;
+  padding: 0;
+  background-color:#000;
+  background-image: url('../images/background_selectfile.png');
+}
+a#fileselect{
+  width: 275px;
+  height: 84px;
+  display: block;
+  margin: 103px 0px 0px 73px;
+  background:transparent url('../images/buttons/fileselect_base.png') center top no-repeat;
+}
+a#fileselect:hover{
+  background-image: url('../images/buttons/fileselect_hover.png');
+}
