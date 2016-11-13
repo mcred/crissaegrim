@@ -10,6 +10,7 @@
     "noImplicitAny": false
   },
   "files": [
+    "app/app.ts",
     "app/app.component.ts",
     "app/app.module.ts"
   ]
