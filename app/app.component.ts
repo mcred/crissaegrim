@@ -7,7 +7,7 @@ import { ipcRenderer } from 'electron';
 })
 
 export class AppComponent {
-	doSomething() {
+	selectFile() {
 		var hexstring = ipcRenderer.send('showOpenDialog');
     console.log(hexstring);
 	}
