@@ -10,7 +10,8 @@
 ```
 npm install
 npm run build
-npm run electron ```
+npm run electron
+```
 
 ### Built with ###
 * TypeScript (https://www.typescriptlang.org/)
