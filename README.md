@@ -6,6 +6,10 @@
 * Can open Mednafen save files
 * Can read first game save
 
+### Requirments ###
+* Node 7+
+* NPM 3+
+
 ### How to get started ###
 ```
 npm install
