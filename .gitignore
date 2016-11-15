@@ -3,3 +3,4 @@ workfiles
 build
 npm-debug.log
 .DS_Store
+*.map
