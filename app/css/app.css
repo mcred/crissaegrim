@@ -1,8 +1,14 @@
 body{
-  margin:0;
-  padding: 0;
+  margin:0px;
+  padding: 0px;
   background-color:#000;
-  background-image: url('../images/background_selectfile.png');
+}
+div#selectFile{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    overflow: auto;
+    background-image: url('../images/background_selectfile.png');
 }
 a#fileselect{
   width: 275px;

@@ -7,11 +7,14 @@ import { ipcRenderer } from 'electron';
 @Component({
   selector: 'app',
   template: `
-    <a href="#" id="fileselect" (click)="doSomething();"></a>
+    <div id="selectFile">
+      <a href="#" id="fileselect" (click)="doSomething();"></a>
+    </div>
   `
 })
 export class AppComponent {
 	doSomething() {
-		ipcRenderer.send('showOpenDialog');
+		var hexstring = ipcRenderer.send('showOpenDialog');
+    console.log(hexstring);
 	}
 }
