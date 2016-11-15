@@ -9,6 +9,10 @@
     "sourceMap": true,
     "noImplicitAny": false
   },
+  "awesomeTypescriptLoaderOptions": {
+    "compiler": "typescript",
+    "useBabel": true
+  },
   "files": [
     "app/app.ts",
     "app/app.component.ts",

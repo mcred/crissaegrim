@@ -1,10 +1,10 @@
 var path = require('path');
 var webpack = require('webpack');
 var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
+var TsConfigPathsPlugin = require('awesome-typescript-loader').TsConfigPathsPlugin;
 
 module.exports = {
   devtool: 'source-map',
-  debug: true,
 
   entry: {
     'angular2': [
@@ -24,22 +24,40 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['','.ts','.js','.json', '.css', '.html']
+    extensions: ['.ts','.js','.json', '.css', '.html']
   },
 
   module: {
     loaders: [
       {
         test: /\.ts$/,
-        loader: 'ts',
+        loader: 'awesome-typescript-loader',
         exclude: [ /node_modules/ ]
       }
     ]
   },
 
-  plugins: [
-    new CommonsChunkPlugin({ name: 'angular2', filename: 'angular2.js', minChunks: Infinity }),
-    new CommonsChunkPlugin({ name: 'common',   filename: 'common.js' })
+  externals: [
+    (function () {
+      var IGNORES = [
+        'electron'
+      ];
+      return function (context, request, callback) {
+        if (IGNORES.indexOf(request) >= 0) {
+          return callback(null, "require('" + request + "')");
+        }
+        return callback();
+      };
+    })()
   ],
-  target:'node-webkit'
+
+  plugins: [
+    new CommonsChunkPlugin({ name: 'angular2', filename: 'angular2.js', minChunks: Infinity, debug: true }),
+    new CommonsChunkPlugin({ name: 'common',   filename: 'common.js', debug: true }),
+    new webpack.ContextReplacementPlugin(
+      /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+      __dirname
+    ),
+    new TsConfigPathsPlugin(/* { tsconfig, compiler } */)
+  ]
 };

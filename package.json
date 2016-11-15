@@ -17,13 +17,14 @@
   "devDependencies": {
     "@types/electron": "^1.4.26",
     "@types/node": "^6.0.46",
+    "awesome-typescript-loader": "^2.2.4",
+    "babel-core": "^6.18.2",
+    "concurrently": "^3.0.0",
     "electron-prebuilt": "^1.2.0",
     "es6-shim": "^0.35.0",
-    "ts-loader": "^1.2.0",
-    "typescript": "^2.0.9",
-    "typings": "^2.0.0",
-    "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0"
+    "lite-server": "^2.2.2",
+    "typescript": "^2.0.0",
+    "webpack": "^2.1.0-beta.25"
   },
   "dependencies": {
     "@angular/common": "2.1.2",
@@ -33,9 +34,10 @@
     "@angular/platform-browser": "2.1.2",
     "@angular/platform-browser-dynamic": "2.1.2",
     "@angular/router": "3.1.2",
-    "reflect-metadata": "0.1.8",
-    "rxjs": "5.0.0-rc.2",
-    "systemjs": "0.19.41",
-    "zone.js": "^0.6.12"
+    "angular-in-memory-web-api": "~0.1.5",
+    "core-js": "^2.4.1",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "5.0.0-beta.12",
+    "zone.js": "^0.6.25"
   }
 }
