@@ -8,6 +8,7 @@ module.exports = {
 
   entry: {
     'angular2': [
+      'zone.js',
       'rxjs',
       'reflect-metadata',
       '@angular/core'
