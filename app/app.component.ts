@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ipcRenderer } from 'electron';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app',
@@ -7,11 +8,16 @@ import { ipcRenderer } from 'electron';
 })
 
 export class AppComponent {
-  saveFile = '';
-	selectFile() {
-    ipcRenderer.send('showOpenDialog');
-    ipcRenderer.on('getFile', (event, arg) => {
-      this.saveFile = arg;
-    });
+  constructor(
+    private router: Router
+  ) { }
+
+	selectFile(): void {
+    this.router.navigate(['/character']);
+    //ipcRenderer.send('showOpenDialog');
+    //ipcRenderer.on('getFile', (event, arg) => {
+      //console.log("/character");
+      //this.router.navigate(['/character', arg]);
+    //});
 	}
 }
