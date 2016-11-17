@@ -7,8 +7,11 @@ import { ipcRenderer } from 'electron';
 })
 
 export class AppComponent {
+  saveFile = '';
 	selectFile() {
-		var hexstring = ipcRenderer.send('showOpenDialog');
-    console.log(hexstring);
+    ipcRenderer.send('showOpenDialog');
+    ipcRenderer.on('getFile', (event, arg) => {
+      this.saveFile = arg;
+    });
 	}
 }
