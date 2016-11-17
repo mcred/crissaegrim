@@ -16,6 +16,7 @@
   "files": [
     "app/app.ts",
     "app/app.component.ts",
-    "app/app.module.ts"
+    "app/app.module.ts",
+    "app/character.component.ts"
   ]
 }
