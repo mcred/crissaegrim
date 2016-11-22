@@ -13,6 +13,9 @@ export class SelectFileComponent {
   }
 
   selectFile(){
-    this.router.navigate(['/character']);
+    ipcRenderer.send('showOpenDialog');
+    ipcRenderer.on('getFile', (event, arg) => {
+      this.router.navigate(['/character', arg]);
+    });
   }
 }

@@ -9,7 +9,7 @@ import { SelectFileComponent }  from './selectfile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'selectfile', pathMatch: 'full'},
-  { path: 'character', component: CharacterComponent },
+  { path: 'character/:file', component: CharacterComponent },
   { path: 'selectfile', component: SelectFileComponent }
 ]
 
