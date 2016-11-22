@@ -45,7 +45,7 @@ ipcMain.on('showOpenDialog', () => {
     if (fileNames === undefined) {
       console.log('No file selected');
     } else {
-      fs.readFile(fileNames[0], 'hex', (function (err, data) {
+      fs.readFile(fileNames[0], '', (function (err, data) {
         if (err) {
           this.alert(`An error ocurred reading the file : ${err.message}`);
           return;

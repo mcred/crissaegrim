@@ -7,9 +7,11 @@ import { AppComponent }   from './app.component';
 import { CharacterComponent }   from './character.component';
 import { SelectFileComponent }  from './selectfile.component';
 
+import { FileService } from './file.service';
+
 const routes: Routes = [
   { path: '', redirectTo: 'selectfile', pathMatch: 'full'},
-  { path: 'character/:file', component: CharacterComponent },
+  { path: 'character', component: CharacterComponent },
   { path: 'selectfile', component: SelectFileComponent }
 ]
 
@@ -23,7 +25,7 @@ const routes: Routes = [
     CharacterComponent,
     SelectFileComponent
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, FileService],
   bootstrap: [ AppComponent ]
 })
 
