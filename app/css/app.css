@@ -10,13 +10,14 @@ div#selectFile{
     overflow: auto;
     background-image: url('../images/background_selectfile.png');
 }
-a#fileselect{
+button#fileselect{
   width: 275px;
   height: 84px;
   display: block;
   margin: 103px 0px 0px 73px;
+  border: 0;
   background:transparent url('../images/buttons/fileselect_base.png') center top no-repeat;
 }
-a#fileselect:hover{
+button#fileselect:hover{
   background-image: url('../images/buttons/fileselect_hover.png');
 }
