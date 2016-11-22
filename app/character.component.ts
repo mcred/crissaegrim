@@ -9,8 +9,11 @@ import { FileService } from './file.service';
 })
 
 export class CharacterComponent {
+  file: any;
   hp: string;
   hpmax: string;
+  mp: string;
+  mpmax: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -18,9 +21,12 @@ export class CharacterComponent {
   ) {}
 
   ngOnInit() {
+    this.file = this.fileService.file;
     console.log(this.fileService.file);
-    this.hp = this.fileService.file[parseInt("0x2474")];
-    this.hpmax = this.fileService.file[parseInt("0x2478")];
+    this.hp = this.file[parseInt("0x2474")];
+    this.hpmax = this.file[parseInt("0x2478")];
+    this.mp = this.file[parseInt("0x2484")];
+    this.mpmax = this.file[parseInt("0x2488")];
   }
 
 }
