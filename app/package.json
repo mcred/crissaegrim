@@ -1,6 +1,6 @@
 {
   "name": "crissaegrim",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Symphony of the Night save file editor",
   "main": "main.js"
 }
