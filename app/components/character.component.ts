@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ipcRenderer } from 'electron';
 import { ActivatedRoute } from '@angular/router';
 import { FileService } from '../services/file.service';
+import { SOTN } from '../custom/sotn';
 
 @Component({
   selector: 'app',
@@ -17,16 +18,16 @@ export class CharacterComponent {
 
   constructor(
     private route: ActivatedRoute,
-    private fileService: FileService
+    private fileService: FileService,
+    private sotn: SOTN
   ) {}
 
   ngOnInit() {
-    this.file = this.fileService.file;
-    console.log(this.fileService.file);
-    this.hp = this.file[parseInt("0x2474")];
-    this.hpmax = this.file[parseInt("0x2478")];
-    this.mp = this.file[parseInt("0x2484")];
-    this.mpmax = this.file[parseInt("0x2488")];
+    this.sotn.setFile(this.fileService.file);
+    this.hp = this.sotn.getValueByName('HP');
+    this.hpmax = this.sotn.getValueByName('HPMAX');
+    this.mp = this.sotn.getValueByName('MP');
+    this.mpmax = this.sotn.getValueByName('MPMAX');
   }
 
 }

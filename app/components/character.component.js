@@ -11,18 +11,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 const core_1 = require("@angular/core");
 const router_1 = require("@angular/router");
 const file_service_1 = require("../services/file.service");
+const sotn_1 = require("../custom/sotn");
 let CharacterComponent = class CharacterComponent {
-    constructor(route, fileService) {
+    constructor(route, fileService, sotn) {
         this.route = route;
         this.fileService = fileService;
+        this.sotn = sotn;
     }
     ngOnInit() {
-        this.file = this.fileService.file;
-        console.log(this.fileService.file);
-        this.hp = this.file[parseInt("0x2474")];
-        this.hpmax = this.file[parseInt("0x2478")];
-        this.mp = this.file[parseInt("0x2484")];
-        this.mpmax = this.file[parseInt("0x2488")];
+        this.sotn.setFile(this.fileService.file);
+        this.hp = this.sotn.getValueByName('HP');
+        this.hpmax = this.sotn.getValueByName('HPMAX');
+        this.mp = this.sotn.getValueByName('MP');
+        this.mpmax = this.sotn.getValueByName('MPMAX');
     }
 };
 CharacterComponent = __decorate([
@@ -31,7 +32,8 @@ CharacterComponent = __decorate([
         templateUrl: 'templates/character.html'
     }),
     __metadata("design:paramtypes", [router_1.ActivatedRoute,
-        file_service_1.FileService])
+        file_service_1.FileService,
+        sotn_1.SOTN])
 ], CharacterComponent);
 exports.CharacterComponent = CharacterComponent;
 //# sourceMappingURL=character.component.js.map

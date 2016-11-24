@@ -8,6 +8,7 @@ import { CharacterComponent }   from './components/character.component';
 import { SelectFileComponent }  from './components/selectfile.component';
 
 import { FileService } from './services/file.service';
+import { SOTN } from './custom/sotn';
 
 const routes: Routes = [
   { path: '', redirectTo: 'selectfile', pathMatch: 'full'},
@@ -25,7 +26,7 @@ const routes: Routes = [
     CharacterComponent,
     SelectFileComponent
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, FileService],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, FileService, SOTN],
   bootstrap: [ AppComponent ]
 })
 
