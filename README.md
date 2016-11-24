@@ -2,7 +2,7 @@
 
 ### Castlevania: Symphony of the Night Save File Editor ###
 
-* v 0.0.2
+* v 0.0.3
 * Can open Mednafen save files
 * Can read first game save
 
