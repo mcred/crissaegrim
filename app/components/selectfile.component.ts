@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ipcRenderer } from 'electron';
-import { FileService } from './file.service';
+import { FileService } from '../services/file.service';
 
 @Component({
   selector: 'app',

@@ -3,11 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
-import { AppComponent }   from './app.component';
-import { CharacterComponent }   from './character.component';
-import { SelectFileComponent }  from './selectfile.component';
+import { AppComponent }   from './components/app.component';
+import { CharacterComponent }   from './components/character.component';
+import { SelectFileComponent }  from './components/selectfile.component';
 
-import { FileService } from './file.service';
+import { FileService } from './services/file.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'selectfile', pathMatch: 'full'},
