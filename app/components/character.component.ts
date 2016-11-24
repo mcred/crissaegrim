@@ -15,6 +15,8 @@ export class CharacterComponent {
   hpmax: string;
   mp: string;
   mpmax: string;
+  hearts: string;
+  heartmax: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -28,6 +30,8 @@ export class CharacterComponent {
     this.hpmax = this.sotn.getValueByName('HPMAX');
     this.mp = this.sotn.getValueByName('MP');
     this.mpmax = this.sotn.getValueByName('MPMAX');
+    this.hearts = this.sotn.getValueByName('HEARTS');
+    this.heartmax = this.sotn.getValueByName('HEARTMAX');
   }
 
 }
