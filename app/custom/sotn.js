@@ -19,7 +19,7 @@ class SOTN {
             STR: "0x248C",
             CON: "0x2490",
             INT: "0x2494",
-            LUCK: "0x2498",
+            LCK: "0x2498",
             ATTBONUS: "0x249C"
         };
     }

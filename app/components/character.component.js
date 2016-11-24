@@ -26,6 +26,10 @@ let CharacterComponent = class CharacterComponent {
         this.mpmax = this.sotn.getValueByName('MPMAX');
         this.hearts = this.sotn.getValueByName('HEARTS');
         this.heartmax = this.sotn.getValueByName('HEARTMAX');
+        this.str = this.sotn.getValueByName('STR');
+        this.con = this.sotn.getValueByName('CON');
+        this.int = this.sotn.getValueByName('INT');
+        this.lck = this.sotn.getValueByName('LCK');
     }
 };
 CharacterComponent = __decorate([
