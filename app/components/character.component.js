@@ -22,17 +22,6 @@ let CharacterComponent = class CharacterComponent {
     ngOnInit() {
         this.sotn.setFile(this.fileService.file);
         this.alucard = new alucard_1.Alucard(this.sotn.getValueByName('HP'), this.sotn.getValueByName('HPMAX'), this.sotn.getValueByName('MP'), this.sotn.getValueByName('MPMAX'), this.sotn.getValueByName('HEARTS'), this.sotn.getValueByName('HEARTMAX'), this.sotn.getValueByName('STR'), this.sotn.getValueByName('CON'), this.sotn.getValueByName('INT'), this.sotn.getValueByName('LCK'));
-        //this.character.hp = this.sotn.getValueByName('HP');
-        //this.sotn.getValueByName('HP'),
-        //this.sotn.getValueByName('HPMAX'),
-        //this.sotn.getValueByName('MP'),
-        //this.sotn.getValueByName('MPMAX'),
-        //this.sotn.getValueByName('HEARTS'),
-        //this.sotn.getValueByName('HEARTMAX'),
-        //this.sotn.getValueByName('STR'),
-        //this.sotn.getValueByName('CON'),
-        //this.sotn.getValueByName('INT'),
-        //this.sotn.getValueByName('LCK')
     }
 };
 CharacterComponent = __decorate([

@@ -32,18 +32,7 @@ export class CharacterComponent {
       this.sotn.getValueByName('CON'),
       this.sotn.getValueByName('INT'),
       this.sotn.getValueByName('LCK')
-    )
-    //this.character.hp = this.sotn.getValueByName('HP');
-    //this.sotn.getValueByName('HP'),
-    //this.sotn.getValueByName('HPMAX'),
-    //this.sotn.getValueByName('MP'),
-    //this.sotn.getValueByName('MPMAX'),
-    //this.sotn.getValueByName('HEARTS'),
-    //this.sotn.getValueByName('HEARTMAX'),
-    //this.sotn.getValueByName('STR'),
-    //this.sotn.getValueByName('CON'),
-    //this.sotn.getValueByName('INT'),
-    //this.sotn.getValueByName('LCK')
+    );
   }
 
 }
