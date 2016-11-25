@@ -19,8 +19,9 @@ let SelectFileComponent = class SelectFileComponent {
     }
     selectFile() {
         electron_1.ipcRenderer.send('showOpenDialog');
-        electron_1.ipcRenderer.on('getFile', (event, arg) => {
-            this.fileService.file = arg;
+        electron_1.ipcRenderer.on('getFile', (event, file, location) => {
+            this.fileService.file = file;
+            this.fileService.location = location;
             this.router.navigate(['/character']);
         });
     }

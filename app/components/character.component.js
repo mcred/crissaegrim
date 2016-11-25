@@ -24,6 +24,7 @@ let CharacterComponent = class CharacterComponent {
         this.alucard = new alucard_1.Alucard(this.sotn.getValueByName('HP'), this.sotn.getValueByName('HPMAX'), this.sotn.getValueByName('MP'), this.sotn.getValueByName('MPMAX'), this.sotn.getValueByName('HEARTS'), this.sotn.getValueByName('HEARTMAX'), this.sotn.getValueByName('STR'), this.sotn.getValueByName('CON'), this.sotn.getValueByName('INT'), this.sotn.getValueByName('LCK'));
     }
     logChanges() {
+        console.log(this.fileService.location);
         console.log(this.alucard);
     }
 };

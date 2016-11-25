@@ -18,8 +18,9 @@ export class SelectFileComponent {
 
   selectFile(){
     ipcRenderer.send('showOpenDialog');
-    ipcRenderer.on('getFile', (event, arg) => {
-      this.fileService.file = arg;
+    ipcRenderer.on('getFile', (event, file, location) => {
+      this.fileService.file = file;
+      this.fileService.location = location;
       this.router.navigate(['/character']);
     });
   }

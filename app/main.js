@@ -50,7 +50,7 @@ ipcMain.on('showOpenDialog', () => {
           this.alert(`An error ocurred reading the file : ${err.message}`);
           return;
         }
-        mainWindow.webContents.send('getFile', data);
+        mainWindow.webContents.send('getFile', data, fileNames[0]);
       }));
     }
   }));

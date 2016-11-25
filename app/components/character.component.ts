@@ -36,6 +36,7 @@ export class CharacterComponent {
   }
 
   logChanges(){
+    console.log(this.fileService.location);
     console.log(this.alucard);
   }
 }
