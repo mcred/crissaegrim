@@ -17,6 +17,17 @@ body{
   font-family: 'Fairfax';
   line-height: 32px;
 }
+input
+{
+  background: transparent;
+  border: none;
+  color:#FFF;
+  font-size: 26px;
+  font-family: 'Fairfax';
+  width: 75px;
+  outline: none;
+  padding: 0px 0px 0px 0px;
+}
 h3{
   width: 100%;
   text-align: center;

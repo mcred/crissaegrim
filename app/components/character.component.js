@@ -12,6 +12,7 @@ const core_1 = require("@angular/core");
 const router_1 = require("@angular/router");
 const file_service_1 = require("../services/file.service");
 const sotn_1 = require("../custom/sotn");
+const alucard_1 = require("../models/alucard");
 let CharacterComponent = class CharacterComponent {
     constructor(route, fileService, sotn) {
         this.route = route;
@@ -20,16 +21,18 @@ let CharacterComponent = class CharacterComponent {
     }
     ngOnInit() {
         this.sotn.setFile(this.fileService.file);
-        this.hp = this.sotn.getValueByName('HP');
-        this.hpmax = this.sotn.getValueByName('HPMAX');
-        this.mp = this.sotn.getValueByName('MP');
-        this.mpmax = this.sotn.getValueByName('MPMAX');
-        this.hearts = this.sotn.getValueByName('HEARTS');
-        this.heartmax = this.sotn.getValueByName('HEARTMAX');
-        this.str = this.sotn.getValueByName('STR');
-        this.con = this.sotn.getValueByName('CON');
-        this.int = this.sotn.getValueByName('INT');
-        this.lck = this.sotn.getValueByName('LCK');
+        this.alucard = new alucard_1.Alucard(this.sotn.getValueByName('HP'), this.sotn.getValueByName('HPMAX'), this.sotn.getValueByName('MP'), this.sotn.getValueByName('MPMAX'), this.sotn.getValueByName('HEARTS'), this.sotn.getValueByName('HEARTMAX'), this.sotn.getValueByName('STR'), this.sotn.getValueByName('CON'), this.sotn.getValueByName('INT'), this.sotn.getValueByName('LCK'));
+        //this.character.hp = this.sotn.getValueByName('HP');
+        //this.sotn.getValueByName('HP'),
+        //this.sotn.getValueByName('HPMAX'),
+        //this.sotn.getValueByName('MP'),
+        //this.sotn.getValueByName('MPMAX'),
+        //this.sotn.getValueByName('HEARTS'),
+        //this.sotn.getValueByName('HEARTMAX'),
+        //this.sotn.getValueByName('STR'),
+        //this.sotn.getValueByName('CON'),
+        //this.sotn.getValueByName('INT'),
+        //this.sotn.getValueByName('LCK')
     }
 };
 CharacterComponent = __decorate([

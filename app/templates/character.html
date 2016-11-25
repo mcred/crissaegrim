@@ -1,7 +1,8 @@
 <div id="characterDiv">
+  <form #alucardForm="ngForm">
   <div style="margin:106px 0px 0px 220px; width: 220px;">
     <h3>ALUCARD</h3>
-    HP {{ hp }} / {{ hpmax }} <br />
+    HP <input type="text" id="hp" name="hp" [(ngModel)]="alucard.hp" #hp="ngModel"> / {{ hpmax }} <br />
     MP {{ mp }} / {{ mpmax }} <br />
     HEARTS {{ hearts }} / {{ heartmax }}
   </div>
@@ -11,4 +12,5 @@
     INT {{ int }} <br />
     LCK {{ lck }}
   </div>
+  </form>
 </div>

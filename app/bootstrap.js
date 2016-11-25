@@ -12,6 +12,7 @@ const core_1 = require("@angular/core");
 const platform_browser_1 = require("@angular/platform-browser");
 const router_1 = require("@angular/router");
 const common_1 = require("@angular/common");
+const forms_1 = require("@angular/forms");
 const app_component_1 = require("./components/app.component");
 const character_component_1 = require("./components/character.component");
 const selectfile_component_1 = require("./components/selectfile.component");
@@ -28,7 +29,8 @@ AppModule = __decorate([
     core_1.NgModule({
         imports: [
             platform_browser_1.BrowserModule,
-            router_1.RouterModule.forRoot(routes)
+            router_1.RouterModule.forRoot(routes),
+            forms_1.FormsModule
         ],
         declarations: [
             app_component_1.AppComponent,

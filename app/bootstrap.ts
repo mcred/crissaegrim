@@ -2,6 +2,7 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import {FormsModule} from "@angular/forms";
 
 import { AppComponent }   from './components/app.component';
 import { CharacterComponent }   from './components/character.component';
@@ -19,7 +20,8 @@ const routes: Routes = [
 @NgModule({
   imports:      [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule
   ],
   declarations: [
     AppComponent,
