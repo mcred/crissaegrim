@@ -35,4 +35,7 @@ export class CharacterComponent {
     );
   }
 
+  logChanges(){
+    console.log(this.alucard);
+  }
 }

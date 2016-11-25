@@ -33,7 +33,7 @@ export class SOTN {
     this.file = file;
   }
 
-  public getValueByName(name: string): string
+  public getValueByName(name: string): number
   {
     return this.file[parseInt(this.map[name])];
   }

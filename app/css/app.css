@@ -24,9 +24,15 @@ input
   color:#FFF;
   font-size: 26px;
   font-family: 'Fairfax';
-  width: 38px;
+  width: 39px;
   outline: none;
   padding: 0px 0px 0px 0px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 h3{
   width: 100%;

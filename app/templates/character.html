@@ -1,19 +1,20 @@
 <div id="characterDiv">
-  <form #alucardForm="ngForm">
+  <form #alucardForm="ngForm" (ngSubmit)="logChanges()">
     <div style="margin:106px 0px 0px 220px; width: 220px;">
       <h3>ALUCARD</h3>
-      HP <input type="text" id="hp" name="hp" [(ngModel)]="alucard.hp" #hp="ngModel"> /
-        <input type="text" id="hpmax" name="hpmax" [(ngModel)]="alucard.hpmax" #hp="ngModel"> <br />
-      MP <input type="text" id="mp" name="mp" [(ngModel)]="alucard.mp" #hp="ngModel"> /
-        <input type="text" id="mpmax" name="mpmax" [(ngModel)]="alucard.mpmax" #hp="ngModel"> <br />
-      HEARTS <input type="text" id="hearts" name="hearts" [(ngModel)]="alucard.hearts" #hp="ngModel"> /
-        <input type="text" id="heartmax" name="heartmax" [(ngModel)]="alucard.heartmax" #hp="ngModel">
+      HP <input type="number" id="hp" name="hp" [(ngModel)]="alucard.hp" #hp="ngModel"> /
+        <input type="number" id="hpmax" name="hpmax" [(ngModel)]="alucard.hpmax" #hp="ngModel"> <br />
+      MP <input type="number" id="mp" name="mp" [(ngModel)]="alucard.mp" #hp="ngModel"> /
+        <input type="number" id="mpmax" name="mpmax" [(ngModel)]="alucard.mpmax" #hp="ngModel"> <br />
+      HEARTS <input type="number" id="hearts" name="hearts" [(ngModel)]="alucard.hearts" #hp="ngModel"> /
+        <input type="number" id="heartmax" name="heartmax" [(ngModel)]="alucard.heartmax" #hp="ngModel">
     </div>
     <div style="margin:70px 0px 0px 80px; width: 220px;">
-      STR <input type="text" id="str" name="str" [(ngModel)]="alucard.str" #hp="ngModel"> <br />
-      CON <input type="text" id="con" name="con" [(ngModel)]="alucard.con" #hp="ngModel"> <br />
-      INT <input type="text" id="int" name="int" [(ngModel)]="alucard.int" #hp="ngModel"> <br />
-      LCK <input type="text" id="lck" name="lck" [(ngModel)]="alucard.lck" #hp="ngModel">
+      STR <input type="number" id="str" name="str" [(ngModel)]="alucard.str" #hp="ngModel"> <br />
+      CON <input type="number" id="con" name="con" [(ngModel)]="alucard.con" #hp="ngModel"> <br />
+      INT <input type="number" id="int" name="int" [(ngModel)]="alucard.int" #hp="ngModel"> <br />
+      LCK <input type="number" id="lck" name="lck" [(ngModel)]="alucard.lck" #hp="ngModel">
     </div>
+    <button type="submit">Submit</button>
   </form>
 </div>
