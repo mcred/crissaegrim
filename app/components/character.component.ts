@@ -45,7 +45,10 @@ export class CharacterComponent {
     ipcRenderer.on('fileSaved', (event) => {
       //this.router.navigate(['/']);
     });
-    console.log(this.fileService.location);
-    console.log(this.alucard);
   }
+
+  cancelSave(){
+    this.router.navigate(['/']);
+  }
+
 }

@@ -64,3 +64,27 @@ button#fileselect{
 button#fileselect:hover{
   background-image: url('../images/buttons/fileselect_hover.png');
 }
+button#overwrite_yes{
+  width: 157px;
+  height: 47px;
+  display: block;
+  margin: 15px 0px 0px 12px;
+  border: 0;
+  float: left;
+  background: transparent url('../images/buttons/yes_inactive.png') center top no-repeat;
+}
+button#overwrite_yes:hover{
+  background-image: url('../images/buttons/yes_active.png');
+}
+button#overwrite_no{
+  width: 157px;
+  height: 47px;
+  display: block;
+  margin: 15px 0px 0px 119px;
+  border: 0;
+  float: left;
+  background: transparent url('../images/buttons/no_inactive.png') center top no-repeat;
+}
+button#overwrite_no:hover{
+  background-image: url('../images/buttons/no_active.png');
+}

@@ -33,8 +33,9 @@ let CharacterComponent = class CharacterComponent {
         electron_1.ipcRenderer.on('fileSaved', (event) => {
             //this.router.navigate(['/']);
         });
-        console.log(this.fileService.location);
-        console.log(this.alucard);
+    }
+    cancelSave() {
+        this.router.navigate(['/']);
     }
 };
 CharacterComponent = __decorate([

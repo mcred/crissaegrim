@@ -15,6 +15,10 @@
       INT <input type="number" id="int" name="int" [(ngModel)]="alucard.int" #hp="ngModel"> <br />
       LCK <input type="number" id="lck" name="lck" [(ngModel)]="alucard.lck" #hp="ngModel">
     </div>
-    <button type="submit">Submit</button>
+    <div style="width: 458px; height: 109px; position: absolute; margin: 10px 0px 0px 310px;">
+        <img src="./images/buttons/overwrite_data.png" />
+        <button id="overwrite_yes" type="submit" (click)="updateFile()"></button>
+        <button id="overwrite_no" (click)="cancelSave()"></button>
+    </div>
   </form>
 </div>
