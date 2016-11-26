@@ -23,11 +23,17 @@ class SOTN {
             ATTBONUS: "0x249C"
         };
     }
+    getFile() {
+        return this.file;
+    }
     setFile(file) {
         this.file = file;
     }
     getValueByName(name) {
         return this.file[parseInt(this.map[name])];
+    }
+    setValueByName(name, val) {
+        this.file[parseInt(this.map[name])] = val;
     }
 }
 exports.SOTN = SOTN;

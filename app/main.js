@@ -55,3 +55,12 @@ ipcMain.on('showOpenDialog', () => {
     }
   }));
 });
+
+ipcMain.on('saveFile', (event, fileName, content) => {
+  fs.writeFile(fileName, content, '', (function (err) {
+    if(err){
+      alert('File could not be saved.');
+    }
+    mainWindow.webContents.send('fileSaved');
+  }));
+})

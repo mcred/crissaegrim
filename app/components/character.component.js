@@ -9,12 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require("@angular/core");
+const electron_1 = require("electron");
 const router_1 = require("@angular/router");
 const file_service_1 = require("../services/file.service");
 const sotn_1 = require("../custom/sotn");
 const alucard_1 = require("../models/alucard");
 let CharacterComponent = class CharacterComponent {
-    constructor(route, fileService, sotn) {
+    constructor(router, route, fileService, sotn) {
+        this.router = router;
         this.route = route;
         this.fileService = fileService;
         this.sotn = sotn;
@@ -23,7 +25,14 @@ let CharacterComponent = class CharacterComponent {
         this.sotn.setFile(this.fileService.file);
         this.alucard = new alucard_1.Alucard(this.sotn.getValueByName('HP'), this.sotn.getValueByName('HPMAX'), this.sotn.getValueByName('MP'), this.sotn.getValueByName('MPMAX'), this.sotn.getValueByName('HEARTS'), this.sotn.getValueByName('HEARTMAX'), this.sotn.getValueByName('STR'), this.sotn.getValueByName('CON'), this.sotn.getValueByName('INT'), this.sotn.getValueByName('LCK'));
     }
-    logChanges() {
+    updateFile() {
+        for (var stat in this.alucard) {
+            this.sotn.setValueByName(stat, this.alucard[stat]);
+        }
+        electron_1.ipcRenderer.send('saveFile', this.fileService.location, this.sotn.getFile());
+        electron_1.ipcRenderer.on('fileSaved', (event) => {
+            //this.router.navigate(['/']);
+        });
         console.log(this.fileService.location);
         console.log(this.alucard);
     }
@@ -33,7 +42,8 @@ CharacterComponent = __decorate([
         selector: 'app',
         templateUrl: 'templates/character.html'
     }),
-    __metadata("design:paramtypes", [router_1.ActivatedRoute,
+    __metadata("design:paramtypes", [router_1.Router,
+        router_1.ActivatedRoute,
         file_service_1.FileService,
         sotn_1.SOTN])
 ], CharacterComponent);

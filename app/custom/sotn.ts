@@ -28,6 +28,11 @@ export class SOTN {
     };
   }
 
+  public getFile()
+  {
+    return this.file;
+  }
+
   public setFile(file: any)
   {
     this.file = file;
@@ -36,5 +41,10 @@ export class SOTN {
   public getValueByName(name: string): number
   {
     return this.file[parseInt(this.map[name])];
+  }
+
+  public setValueByName(name: string, val: number): void
+  {
+    this.file[parseInt(this.map[name])] = val;
   }
 }

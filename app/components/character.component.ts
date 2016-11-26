@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ipcRenderer } from 'electron';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FileService } from '../services/file.service';
 import { SOTN } from '../custom/sotn';
 import { Alucard } from '../models/alucard';
@@ -12,6 +12,7 @@ import { Alucard } from '../models/alucard';
 
 export class CharacterComponent {
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private fileService: FileService,
     private sotn: SOTN
@@ -35,7 +36,15 @@ export class CharacterComponent {
     );
   }
 
-  logChanges(){
+  updateFile(){
+    for (var stat in this.alucard)
+    {
+      this.sotn.setValueByName(stat, this.alucard[stat]);
+    }
+    ipcRenderer.send('saveFile', this.fileService.location, this.sotn.getFile());
+    ipcRenderer.on('fileSaved', (event) => {
+      //this.router.navigate(['/']);
+    });
     console.log(this.fileService.location);
     console.log(this.alucard);
   }
