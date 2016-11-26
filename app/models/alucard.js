@@ -1,16 +1,16 @@
 "use strict";
 class Alucard {
-    constructor(hp, hpmax, mp, mpmax, hearts, heartmax, str, con, int, lck) {
-        this.hp = hp;
-        this.hpmax = hpmax;
-        this.mp = mp;
-        this.mpmax = mpmax;
-        this.hearts = hearts;
-        this.heartmax = heartmax;
-        this.str = str;
-        this.con = con;
-        this.int = int;
-        this.lck = lck;
+    constructor(HP, HPMAX, MP, MPMAX, HEARTS, HEARTMAX, STR, CON, INT, LCK) {
+        this.HP = HP;
+        this.HPMAX = HPMAX;
+        this.MP = MP;
+        this.MPMAX = MPMAX;
+        this.HEARTS = HEARTS;
+        this.HEARTMAX = HEARTMAX;
+        this.STR = STR;
+        this.CON = CON;
+        this.INT = INT;
+        this.LCK = LCK;
     }
 }
 exports.Alucard = Alucard;
