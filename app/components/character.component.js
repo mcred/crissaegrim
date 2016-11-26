@@ -31,7 +31,7 @@ let CharacterComponent = class CharacterComponent {
         }
         electron_1.ipcRenderer.send('saveFile', this.fileService.location, this.sotn.getFile());
         electron_1.ipcRenderer.on('fileSaved', (event) => {
-            //this.router.navigate(['/']);
+            alert('File was saved.');
         });
     }
     cancelSave() {

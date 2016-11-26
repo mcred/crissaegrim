@@ -37,13 +37,12 @@ export class CharacterComponent {
   }
 
   updateFile(){
-    for (var stat in this.alucard)
-    {
+    for (var stat in this.alucard) {
       this.sotn.setValueByName(stat, this.alucard[stat]);
     }
     ipcRenderer.send('saveFile', this.fileService.location, this.sotn.getFile());
     ipcRenderer.on('fileSaved', (event) => {
-      //this.router.navigate(['/']);
+      alert('File was saved.');
     });
   }
 
