@@ -4,7 +4,7 @@
  *
  * @author Derek Smart <derek@grindaga.com>
  * @link https://github.com/mcred/crissaegrim
- * @version 0.0.1
+ * @version 0.1.1
  */
 "use strict";
 class SOTN {
@@ -21,6 +21,7 @@ class SOTN {
             INT: "0x2494",
             LCK: "0x2498",
             ATTBONUS: "0x249C",
+            emptyHand: "0x225D",
             monsterVial_1: "0x225F",
             monsterVial_2: "0x2260",
             monsterVial_3: "0x2261",

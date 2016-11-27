@@ -1,5 +1,6 @@
 export class Inventory{
   constructor(
+    public emptyHand: number,
     public monsterVial_1: number,
     public monsterVial_2: number,
     public monsterVial_3: number,
