@@ -19,6 +19,7 @@
     "app/bootstrap.ts",
     "app/components/character.component.ts",
     "app/components/selectfile.component.ts",
+    "app/components/inventory.component.ts",
     "app/services/file.service.ts",
     "app/custom/sotn.ts",
     "app/models/alucard.ts",
