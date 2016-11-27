@@ -10,7 +10,7 @@ import { Inventory } from '../models/inventory';
   templateUrl: 'templates/inventory.html'
 })
 
-export class CharacterComponent {
+export class InventoryComponent {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -19,6 +19,7 @@ export class CharacterComponent {
   ) {}
 
   public inventory: Inventory;
+  public arrayOfKeys;
 
   ngOnInit() {
     this.sotn.setFile(this.fileService.file);
@@ -193,6 +194,7 @@ export class CharacterComponent {
       this.sotn.getValueByName("alucartShield"),
       this.sotn.getValueByName("alucartSword"),
     );
+    this.arrayOfKeys = Object.keys(this.inventory);
   }
 
   updateFile(){
