@@ -88,3 +88,22 @@ button#overwrite_no{
 button#overwrite_no:hover{
   background-image: url('../images/buttons/no_active.png');
 }
+div#inventoryDiv{
+  width:800px;
+  overflow: auto;
+  background-image: url('../images/background_empty.png');
+}
+div#inventoryDiv form{
+  width: 780px;
+  height: 510px;
+  overflow: scroll;
+  margin: 66px 10px 0px 10px;
+}
+div.inventoryWrap{
+  width:365px;
+  float:left;
+  padding: 0px 0px 0px 20px;
+}
+div.inventoryWrap input{
+  float:right;
+}

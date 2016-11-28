@@ -50,4 +50,8 @@ export class CharacterComponent {
     this.router.navigate(['/']);
   }
 
+  goToInventory(){
+    this.router.navigate(['/inventory']);
+  }
+
 }

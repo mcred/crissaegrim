@@ -37,6 +37,9 @@ let CharacterComponent = class CharacterComponent {
     cancelSave() {
         this.router.navigate(['/']);
     }
+    goToInventory() {
+        this.router.navigate(['/inventory']);
+    }
 };
 CharacterComponent = __decorate([
     core_1.Component({

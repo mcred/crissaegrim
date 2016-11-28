@@ -204,6 +204,7 @@ export class InventoryComponent {
     ipcRenderer.send('saveFile', this.fileService.location, this.sotn.getFile());
     ipcRenderer.on('fileSaved', (event) => {
       alert('File was saved.');
+      this.router.navigate(['/character']);
     });
   }
 

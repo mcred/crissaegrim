@@ -33,6 +33,7 @@ let InventoryComponent = class InventoryComponent {
         electron_1.ipcRenderer.send('saveFile', this.fileService.location, this.sotn.getFile());
         electron_1.ipcRenderer.on('fileSaved', (event) => {
             alert('File was saved.');
+            this.router.navigate(['/character']);
         });
     }
     cancelSave() {
