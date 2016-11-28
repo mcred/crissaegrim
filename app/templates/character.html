@@ -1,5 +1,10 @@
 <div id="characterDiv">
   <form #alucardForm="ngForm" (ngSubmit)="updateFile()">
+    <div style="width: 800px; height: 57px; position: absolute; margin: -95px 0px 0px 0px;">
+      <img style="float:left; display:block; width: 458px; height: 47px;" src="./images/buttons/overwrite_data.png" />
+      <button style="margin-top:0px;" id="overwrite_yes" type="submit"></button>
+      <button style="margin-top:0px; margin-left:10px;" id="overwrite_no" (click)="cancelSave()"></button>
+    </div>
     <div style="margin:106px 0px 0px 220px; width: 220px;">
       <h3>ALUCARD</h3>
       HP <input type="number" id="hp" name="hp" [(ngModel)]="alucard.HP" #hp="ngModel"> /
@@ -14,11 +19,6 @@
       CON <input type="number" id="con" name="con" [(ngModel)]="alucard.CON" #hp="ngModel"> <br />
       INT <input type="number" id="int" name="int" [(ngModel)]="alucard.INT" #hp="ngModel"> <br />
       LCK <input type="number" id="lck" name="lck" [(ngModel)]="alucard.LCK" #hp="ngModel">
-    </div>
-    <div style="width: 458px; height: 109px; position: absolute; margin: 10px 0px 0px 310px;">
-        <img src="./images/buttons/overwrite_data.png" />
-        <button id="overwrite_yes" type="submit"></button>
-        <button id="overwrite_no" (click)="cancelSave()"></button>
     </div>
   </form>
   <button (click)="goToInventory()">Inventory</button>
