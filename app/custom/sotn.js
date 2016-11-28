@@ -4,7 +4,7 @@
  *
  * @author Derek Smart <derek@grindaga.com>
  * @link https://github.com/mcred/crissaegrim
- * @version 0.1.1
+ * @version 0.1.8
  */
 "use strict";
 class SOTN {

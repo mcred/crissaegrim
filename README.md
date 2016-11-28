@@ -3,10 +3,11 @@
 ### Castlevania: Symphony of the Night Save File Editor ###
 
 ### Version Notes ###
-* v 0.1.0
+* v 0.1.8
 * Can open Mednafen save files
 * Can edit save in first slot
 * Can edit base character stats
+* Can edit weapons
 
 ### Road Map ###
 * Map Further stats
