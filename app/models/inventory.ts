@@ -1,6 +1,5 @@
 export class Inventory{
   constructor(
-    public emptyHand: number,
     public monsterVial_1: number,
     public monsterVial_2: number,
     public monsterVial_3: number,
@@ -169,7 +168,6 @@ export class Inventory{
     public libraryCard: number,
     public alucartShield: number,
     public alucartSword: number,
-    public emptyBody: number,
     public clothTunic: number,
     public hideCuirass: number,
     public bronzeCuirass: number,
@@ -195,7 +193,6 @@ export class Inventory{
     public draculaTunic: number,
     public godSGarb: number,
     public axelordArmor: number,
-    public emptyHead: number,
     public sunglasses: number,
     public ballroomMask: number,
     public bandanna: number,
@@ -217,7 +214,6 @@ export class Inventory{
     public dragonHelm: number,
     public silverCrown: number,
     public wizardHat: number,
-    public emptyCloak: number,
     public clothCloak: number,
     public reverseCloak: number,
     public elvenCloak: number,
@@ -226,7 +222,6 @@ export class Inventory{
     public bloodCloak: number,
     public josephsCloak: number,
     public twilightCloak: number,
-    public emptyRelics: number,
     public moonstone: number,
     public sunstone: number,
     public bloodstone: number,

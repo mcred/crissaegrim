@@ -24,7 +24,6 @@ export class InventoryComponent {
   ngOnInit() {
     this.sotn.setFile(this.fileService.file);
     this.inventory = new Inventory(
-      this.sotn.getValueByName("emptyHand"),
       this.sotn.getValueByName("monsterVial_1"),
       this.sotn.getValueByName("monsterVial_2"),
       this.sotn.getValueByName("monsterVial_3"),
@@ -193,7 +192,6 @@ export class InventoryComponent {
       this.sotn.getValueByName("libraryCard"),
       this.sotn.getValueByName("alucartShield"),
       this.sotn.getValueByName("alucartSword"),
-      this.sotn.getValueByName("emptyBody"),
       this.sotn.getValueByName("clothTunic"),
       this.sotn.getValueByName("hideCuirass"),
       this.sotn.getValueByName("bronzeCuirass"),
@@ -219,7 +217,6 @@ export class InventoryComponent {
       this.sotn.getValueByName("draculaTunic"),
       this.sotn.getValueByName("godSGarb"),
       this.sotn.getValueByName("axelordArmor"),
-      this.sotn.getValueByName("emptyHead"),
       this.sotn.getValueByName("sunglasses"),
       this.sotn.getValueByName("ballroomMask"),
       this.sotn.getValueByName("bandanna"),
@@ -241,7 +238,6 @@ export class InventoryComponent {
       this.sotn.getValueByName("dragonHelm"),
       this.sotn.getValueByName("silverCrown"),
       this.sotn.getValueByName("wizardHat"),
-      this.sotn.getValueByName("emptyCloak"),
       this.sotn.getValueByName("clothCloak"),
       this.sotn.getValueByName("reverseCloak"),
       this.sotn.getValueByName("elvenCloak"),
@@ -250,7 +246,6 @@ export class InventoryComponent {
       this.sotn.getValueByName("bloodCloak"),
       this.sotn.getValueByName("josephsCloak"),
       this.sotn.getValueByName("twilightCloak"),
-      this.sotn.getValueByName("emptyRelics"),
       this.sotn.getValueByName("moonstone"),
       this.sotn.getValueByName("sunstone"),
       this.sotn.getValueByName("bloodstone"),

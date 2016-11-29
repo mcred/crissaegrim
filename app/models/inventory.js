@@ -1,7 +1,6 @@
 "use strict";
 class Inventory {
-    constructor(emptyHand, monsterVial_1, monsterVial_2, monsterVial_3, shieldRod, leatherShield, knightShield, ironShield, axelordShield, heraldShield, darkShield, goddessShield, shamanShield, medusaShield, skullShield, fireShield, alucardShield, swordOfDawn, basilard, shortSword, combatKnife, nunchuku, wereBane, rapier, karmaCoin, magicMissile, redRust, takemitsu, shotel, orange, apple, banana, grapes, strawberry, pineapple, peanuts, toadstool, shiitake, cheesecake, shortcake, tart, parfait, pudding, iceCream, frankfurter, hamburger, pizza, cheese, hamAndEggs, omelette, morningSet, lunchA, lunchB, curryRice, gyrosPlate, spaghetti, grapeJuice, barleyTea, greenTea, natou, ramen, misoSoup, sushi, porkBun, readBeanBun, chineseBun, dimSumSet, potRoast, sirloin, turkey, mealTicket, neutronBomb, powerOfSire, pentagram, batPentagram, shuriken, crossShuriken, buffaloShuriken, flameShuriken, tnt, bwakaKnife, boomerang, javelin, tyrfing, namakura, knuckleDuster, gladius, scimitar, cutlass, sabre, falchion, broadsword, bekatowa, damascusSword, hunterSword, estoc, bastardSword, jewelKnuckles, claymore, talware, katana, flameberge, ironFist, zweiHander, swordOfHador, luminus, harper, obsidianSword, gram, jewelSword, mormegil, firebrand, thunderSword, icebrand, stoneSword, holySword, terminusEst, marsil, darkBlade, heavenSword, fistOfTulkas, gurthang, mourneBlade, alucardSword, mablungSword, badelaire, swordFamiliar, greatSword, mace, morningstar, holyRod, starFlail, moonRod, chakram, fireBoomerang, ironBall, holbeinDagger, blueKnuckles, dynamite, osafuneKatana, masamune, muramasa, heartRefresh, runeSword, antiVenom, uncurse, lifeApple, hammer, strUp, lckUp, intUp, attackUp, defenseUp, resistFire, resistThunder, resistIce, resistStone, resistHoly, resistDark, potion, highPotion, elixir, mannaPrism, vorpalBlade, crissagrim, yasatsuna, libraryCard, alucartShield, alucartSword, emptyBody, clothTunic, hideCuirass, bronzeCuirass, ironCuirass, steelCuirass, silverPlate, goldPlate, platinumMail, diamondPlate, fireMail, lightningMail, iceMail, mirrorCuirass, spikeBreakerArmor, alucardArmor, darkArmor, healingMail, holyArmor, walkArmor, brilliantArmor, mojoMail, furyPlate, draculaTunic, godSGarb, axelordArmor, emptyHead, sunglasses, ballroomMask, bandanna, feltHat, velvetHat, goggles, leatherHat, holyGlasses, steelHelm, stoneMask, circlet, goldCirclet, rubyCirclet, opalCirclet, topazCirclet, berylCirclet, catEyeCirclet, coralCirclet, dragonHelm, silverCrown, wizardHat, emptyCloak, clothCloak, reverseCloak, elvenCloak, crystalCloak, royalCloak, bloodCloak, josephsCloak, twilightCloak, emptyRelics, moonstone, sunstone, bloodstone, staurolite, ringOfPales, zircon, aquamarine, turquiose, onyx, garnet, opal, diamond, lapisLazuli, ringOfAres, goldRing, silverRing, ringOfVarda, ringOfArcana, mysticPendant, heartBrooch, necklaceOfJ, gauntlet, ankhOfLife, ringOfFeanor, medal, talisman, duplicator, kingsStone, covenantStone, nauglamir, secretBoots, alucartMail) {
-        this.emptyHand = emptyHand;
+    constructor(monsterVial_1, monsterVial_2, monsterVial_3, shieldRod, leatherShield, knightShield, ironShield, axelordShield, heraldShield, darkShield, goddessShield, shamanShield, medusaShield, skullShield, fireShield, alucardShield, swordOfDawn, basilard, shortSword, combatKnife, nunchuku, wereBane, rapier, karmaCoin, magicMissile, redRust, takemitsu, shotel, orange, apple, banana, grapes, strawberry, pineapple, peanuts, toadstool, shiitake, cheesecake, shortcake, tart, parfait, pudding, iceCream, frankfurter, hamburger, pizza, cheese, hamAndEggs, omelette, morningSet, lunchA, lunchB, curryRice, gyrosPlate, spaghetti, grapeJuice, barleyTea, greenTea, natou, ramen, misoSoup, sushi, porkBun, readBeanBun, chineseBun, dimSumSet, potRoast, sirloin, turkey, mealTicket, neutronBomb, powerOfSire, pentagram, batPentagram, shuriken, crossShuriken, buffaloShuriken, flameShuriken, tnt, bwakaKnife, boomerang, javelin, tyrfing, namakura, knuckleDuster, gladius, scimitar, cutlass, sabre, falchion, broadsword, bekatowa, damascusSword, hunterSword, estoc, bastardSword, jewelKnuckles, claymore, talware, katana, flameberge, ironFist, zweiHander, swordOfHador, luminus, harper, obsidianSword, gram, jewelSword, mormegil, firebrand, thunderSword, icebrand, stoneSword, holySword, terminusEst, marsil, darkBlade, heavenSword, fistOfTulkas, gurthang, mourneBlade, alucardSword, mablungSword, badelaire, swordFamiliar, greatSword, mace, morningstar, holyRod, starFlail, moonRod, chakram, fireBoomerang, ironBall, holbeinDagger, blueKnuckles, dynamite, osafuneKatana, masamune, muramasa, heartRefresh, runeSword, antiVenom, uncurse, lifeApple, hammer, strUp, lckUp, intUp, attackUp, defenseUp, resistFire, resistThunder, resistIce, resistStone, resistHoly, resistDark, potion, highPotion, elixir, mannaPrism, vorpalBlade, crissagrim, yasatsuna, libraryCard, alucartShield, alucartSword, clothTunic, hideCuirass, bronzeCuirass, ironCuirass, steelCuirass, silverPlate, goldPlate, platinumMail, diamondPlate, fireMail, lightningMail, iceMail, mirrorCuirass, spikeBreakerArmor, alucardArmor, darkArmor, healingMail, holyArmor, walkArmor, brilliantArmor, mojoMail, furyPlate, draculaTunic, godSGarb, axelordArmor, sunglasses, ballroomMask, bandanna, feltHat, velvetHat, goggles, leatherHat, holyGlasses, steelHelm, stoneMask, circlet, goldCirclet, rubyCirclet, opalCirclet, topazCirclet, berylCirclet, catEyeCirclet, coralCirclet, dragonHelm, silverCrown, wizardHat, clothCloak, reverseCloak, elvenCloak, crystalCloak, royalCloak, bloodCloak, josephsCloak, twilightCloak, moonstone, sunstone, bloodstone, staurolite, ringOfPales, zircon, aquamarine, turquiose, onyx, garnet, opal, diamond, lapisLazuli, ringOfAres, goldRing, silverRing, ringOfVarda, ringOfArcana, mysticPendant, heartBrooch, necklaceOfJ, gauntlet, ankhOfLife, ringOfFeanor, medal, talisman, duplicator, kingsStone, covenantStone, nauglamir, secretBoots, alucartMail) {
         this.monsterVial_1 = monsterVial_1;
         this.monsterVial_2 = monsterVial_2;
         this.monsterVial_3 = monsterVial_3;
@@ -170,7 +169,6 @@ class Inventory {
         this.libraryCard = libraryCard;
         this.alucartShield = alucartShield;
         this.alucartSword = alucartSword;
-        this.emptyBody = emptyBody;
         this.clothTunic = clothTunic;
         this.hideCuirass = hideCuirass;
         this.bronzeCuirass = bronzeCuirass;
@@ -196,7 +194,6 @@ class Inventory {
         this.draculaTunic = draculaTunic;
         this.godSGarb = godSGarb;
         this.axelordArmor = axelordArmor;
-        this.emptyHead = emptyHead;
         this.sunglasses = sunglasses;
         this.ballroomMask = ballroomMask;
         this.bandanna = bandanna;
@@ -218,7 +215,6 @@ class Inventory {
         this.dragonHelm = dragonHelm;
         this.silverCrown = silverCrown;
         this.wizardHat = wizardHat;
-        this.emptyCloak = emptyCloak;
         this.clothCloak = clothCloak;
         this.reverseCloak = reverseCloak;
         this.elvenCloak = elvenCloak;
@@ -227,7 +223,6 @@ class Inventory {
         this.bloodCloak = bloodCloak;
         this.josephsCloak = josephsCloak;
         this.twilightCloak = twilightCloak;
-        this.emptyRelics = emptyRelics;
         this.moonstone = moonstone;
         this.sunstone = sunstone;
         this.bloodstone = bloodstone;
