@@ -6,3 +6,8 @@ npm-debug.log
 *.map
 Crissaegrim*
 /movies
+/app/components/*.js
+/app/custom/*.js
+/app/models/*.js
+/app/services/*.js
+/app/bootstrap.js
