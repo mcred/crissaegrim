@@ -54,4 +54,8 @@ export class CharacterComponent {
     this.router.navigate(['/inventory']);
   }
 
+  goToRelics(){
+    this.router.navigate(['/relics']);
+  }
+
 }

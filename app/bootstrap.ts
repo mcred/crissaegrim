@@ -7,6 +7,7 @@ import {FormsModule} from "@angular/forms";
 import { AppComponent }   from './components/app.component';
 import { CharacterComponent }   from './components/character.component';
 import { InventoryComponent }   from './components/inventory.component';
+import { RelicsComponent }   from './components/relics.component';
 import { SelectFileComponent }  from './components/selectfile.component';
 
 import { FileService } from './services/file.service';
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'selectfile', pathMatch: 'full'},
   { path: 'character', component: CharacterComponent },
   { path: 'selectfile', component: SelectFileComponent },
+  { path: 'relics', component: RelicsComponent },
   { path: 'inventory', component: InventoryComponent }
 ]
 
@@ -29,6 +31,7 @@ const routes: Routes = [
     AppComponent,
     CharacterComponent,
     SelectFileComponent,
+    RelicsComponent,
     InventoryComponent
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, FileService, SOTN],
