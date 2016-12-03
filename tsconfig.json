@@ -23,6 +23,7 @@
     "app/services/file.service.ts",
     "app/custom/sotn.ts",
     "app/models/alucard.ts",
-    "app/models/inventory.ts"
+    "app/models/inventory.ts",
+    "app/models/relics.ts"
   ]
 }
