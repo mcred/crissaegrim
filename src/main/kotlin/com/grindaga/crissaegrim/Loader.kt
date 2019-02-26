@@ -16,7 +16,6 @@ object Loader {
         println("HP: ${stats.HP}")
 
         /*
-
         for ((key, location) in pointers) {
             if (location.reverseBytes) {
                 val hexVal: ByteArray = slot.getReversedValueByRange(location.getRange())
