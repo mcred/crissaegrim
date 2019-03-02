@@ -1,6 +1,4 @@
-package com.grindaga.crissaegrim
-
-import com.grindaga.crissaegrim.objects.Location
+package com.grindaga.crissaegrim.objects
 
 data class Slot(
     val data: ByteArray
