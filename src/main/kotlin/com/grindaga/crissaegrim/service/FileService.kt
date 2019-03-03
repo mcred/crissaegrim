@@ -1,30 +1,37 @@
 package com.grindaga.crissaegrim.service
 
+import com.grindaga.crissaegrim.controllers.StatsController
 import com.grindaga.crissaegrim.objects.Card
 import javafx.stage.FileChooser
 import tornadofx.*
 import java.io.File
 
-object FileService {
+/**
+FileService to Open and Save Memory Card Files
+
+Thanks to @nekonenene for reference:
+https://github.com/nekonenene/TornadoMemo
+ */
+object FileService: Component() {
     private val mcrFilter = FileChooser.ExtensionFilter("mednafen files (*.mcr)", "*.mcr")
     private val allFilter = FileChooser.ExtensionFilter("all files (*.*)", "*.*")
 
-    fun openFile(targetFile: File? = null) {
-        val file: File
+    private val statsCtrl: StatsController by inject()
+    private val stats = statsCtrl.stats
 
-        if (targetFile == null) {
-            // If the user didn't select, then finish this method.
-            file = getFile() ?: return
-        } else {
-            file = targetFile
+    fun openFile(targetFile: File? = null) {
+        val file: File = when (targetFile) {
+            null -> getFile() ?: return
+            else -> targetFile
         }
 
         try {
             val saveFile = File(file.toString()).inputStream()
             val card = Card.load(file.toString(), saveFile)
             println(card.slots[1])
-            //ModelManager.textModel.textProperty.set(text)
-            //ModelManager.fileModel.fileProperty.set(file)
+
+            stats.hp.setValue(12)
+
         } catch (e: Exception) {
             println(e)
         }

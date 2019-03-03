@@ -5,7 +5,7 @@ import tornadofx.*
 class MainView : View("Crissaegrim") {
     override val root = borderpane {
         top(MenuBarView::class)
-        center(CharacterView::class)
+        center(StatsView::class)
         //bottom(FooterView::class)
     }
 }

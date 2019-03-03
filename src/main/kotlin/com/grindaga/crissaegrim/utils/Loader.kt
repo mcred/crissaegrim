@@ -2,7 +2,6 @@ package com.grindaga.crissaegrim.utils
 
 import com.grindaga.crissaegrim.objects.*
 import com.grindaga.crissaegrim.maps.*
-import com.grindaga.crissaegrim.objects.Stats as StatObj
 import java.io.File
 
 class Loader {
@@ -12,6 +11,7 @@ class Loader {
         return Card.load(fileLocation, saveFile)
     }
 
+    /*
     fun getStats(slot: Slot): StatObj{
         val statMap = Stats()
         return StatObj(
@@ -29,7 +29,6 @@ class Loader {
         )
     }
 
-    /*
     val stats: Stats = Stats()
     println("HP: ${stats.HP}")
 
