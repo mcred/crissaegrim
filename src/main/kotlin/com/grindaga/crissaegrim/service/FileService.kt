@@ -1,10 +1,13 @@
 package com.grindaga.crissaegrim.service
 
 import com.grindaga.crissaegrim.controllers.StatsController
+import com.grindaga.crissaegrim.maps.StatsMap
 import com.grindaga.crissaegrim.objects.Card
 import javafx.stage.FileChooser
 import tornadofx.*
 import java.io.File
+import java.io.FileOutputStream
+import java.io.FileWriter
 
 /**
 FileService to Open and Save Memory Card Files
@@ -19,26 +22,54 @@ object FileService: Component() {
     private val statsCtrl: StatsController by inject()
     private val stats = statsCtrl.stats
 
+    private var fileLocation: String = ""
+
     fun openFile(targetFile: File? = null) {
         val file: File = when (targetFile) {
-            null -> getFile() ?: return
+            null -> getFile(FileChooserMode.Single) ?: return
             else -> targetFile
         }
 
         try {
-            val saveFile = File(file.toString()).inputStream()
-            val card = Card.load(file.toString(), saveFile)
-            println(card.slots[1])
+            fileLocation = file.toString()
+            val card = Card.load(fileLocation)
+            val slot = card.slots[1]
 
-            stats.hp.setValue(12)
+            val statMap = StatsMap()
+            stats.hp.setValue(slot.read(statMap.HP))
 
         } catch (e: Exception) {
             println(e)
         }
     }
 
-    private fun getFile(): File? {
-        val fileList = chooseFile("Select PS1 Memory Card", arrayOf(mcrFilter, allFilter), FileChooserMode.Single)
+    fun saveFile(targetFile: File? = null) {
+
+        //TODO persist card and slot by models
+        val card = Card.load(fileLocation)
+        val slot = card.slots[1]
+        val statMap = StatsMap()
+        slot.write(statMap.HP, stats.hp.value.toInt())
+
+        /*
+        val file: File = when (targetFile) {
+            null -> getFile(FileChooserMode.Save) ?: return
+            else -> targetFile
+        }
+        */
+
+        try {
+            val fileWriter = FileOutputStream(File(fileLocation))
+            fileWriter.write(card.toRaw())
+            fileWriter.close()
+            println("File saved")
+        } catch (e: Exception) {
+            println(e)
+        }
+    }
+
+    private fun getFile(mode: FileChooserMode): File? {
+        val fileList = chooseFile("Select PS1 Memory Card", arrayOf(mcrFilter, allFilter), mode)
         return when (fileList.isEmpty()) {
             true -> null
             else -> fileList.first()

@@ -6,11 +6,6 @@ import java.io.File
 
 class Loader {
 
-    fun loadCard(fileLocation: String): Card {
-        val saveFile = File(fileLocation).inputStream()
-        return Card.load(fileLocation, saveFile)
-    }
-
     /*
     fun getStats(slot: Slot): StatObj{
         val statMap = Stats()

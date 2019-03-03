@@ -2,7 +2,7 @@ package com.grindaga.crissaegrim.maps
 
 import com.grindaga.crissaegrim.objects.Location
 
-data class Stats (
+data class StatsMap (
     val HP: Location = Location(0x474, 1, true),
     val HPMax: Location = Location(0x478, 1, true),
     val Hearts: Location = Location(0x47C, 1, true),

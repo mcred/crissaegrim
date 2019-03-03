@@ -19,6 +19,9 @@ class MenuBarView : View("My View") {
                 }
             }
             item("Save", KeyCombination.valueOf("Shortcut+S")) {
+                setOnAction {
+                    FileService.saveFile()
+                }
             }
             item("Save as new file", KeyCombination.valueOf("Shortcut+W")) {
             }
