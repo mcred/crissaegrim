@@ -9,5 +9,6 @@ class StatsController: Controller() {
 
     init {
         stats.hp.setValue(0)
+        stats.hpMax.setValue(0)
     }
 }

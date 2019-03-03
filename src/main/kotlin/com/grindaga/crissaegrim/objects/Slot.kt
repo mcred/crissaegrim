@@ -53,7 +53,8 @@ data class Slot(
         }
         var address = location.address
         for (byte in byteArray) {
-            setValueAtPosition(address, byte.toByte())
+            val byteAsInt: Int = byte.toInt(16)
+            setValueAtPosition(address, byteAsInt.toByte())
             address++
         }
     }

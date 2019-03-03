@@ -37,6 +37,7 @@ object FileService: Component() {
 
             val statMap = StatsMap()
             stats.hp.setValue(slot.read(statMap.HP))
+            stats.hpMax.setValue(slot.read(statMap.HPMax))
 
         } catch (e: Exception) {
             println(e)
@@ -50,6 +51,7 @@ object FileService: Component() {
         val slot = card.slots[1]
         val statMap = StatsMap()
         slot.write(statMap.HP, stats.hp.value.toInt())
+        slot.write(statMap.HPMax, stats.hpMax.value.toInt())
 
         /*
         val file: File = when (targetFile) {

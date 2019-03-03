@@ -12,6 +12,9 @@ class StatsView : View("My View") {
             field("HP") {
                 textfield(stats.hp)
             }
+            field("HP Max") {
+                textfield(stats.hpMax)
+            }
         }
     }
 }
