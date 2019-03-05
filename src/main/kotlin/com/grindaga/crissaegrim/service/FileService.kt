@@ -1,7 +1,7 @@
 package com.grindaga.crissaegrim.service
 
+import com.grindaga.crissaegrim.controllers.MessageController
 import com.grindaga.crissaegrim.controllers.StatsController
-import com.grindaga.crissaegrim.maps.StatsMap
 import com.grindaga.crissaegrim.objects.Card
 import javafx.stage.FileChooser
 import tornadofx.*
@@ -19,6 +19,7 @@ object FileService: Component() {
     private val allFilter = FileChooser.ExtensionFilter("all files (*.*)", "*.*")
 
     private val statsCtrl: StatsController by inject()
+    private val messageCtrl: MessageController by inject()
     private var fileLocation: String = ""
 
     fun openFile(targetFile: File? = null) {
@@ -58,7 +59,7 @@ object FileService: Component() {
             val fileWriter = FileOutputStream(File(fileLocation))
             fileWriter.write(card.toRaw())
             fileWriter.close()
-            println("File saved")
+            messageCtrl.fire("File saved.")
         } catch (e: Exception) {
             println(e)
         }

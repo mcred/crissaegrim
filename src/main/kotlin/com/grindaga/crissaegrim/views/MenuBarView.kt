@@ -1,6 +1,5 @@
 package com.grindaga.crissaegrim.views
 
-import com.grindaga.crissaegrim.controllers.StatsController
 import com.grindaga.crissaegrim.service.FileService
 import javafx.application.Platform
 import tornadofx.*

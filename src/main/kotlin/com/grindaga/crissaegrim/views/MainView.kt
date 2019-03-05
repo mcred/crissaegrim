@@ -6,6 +6,6 @@ class MainView : View("Crissaegrim") {
     override val root = borderpane {
         top(MenuBarView::class)
         center(StatsView::class)
-        //bottom(FooterView::class)
+        bottom(FooterView::class)
     }
 }
