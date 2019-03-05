@@ -2,7 +2,7 @@ package com.grindaga.crissaegrim.maps
 
 import com.grindaga.crissaegrim.objects.Location
 
-data class Relics(
+data class RelicsMap(
     val soulOfBat: Location = Location(0x238),
     val fireOfBat: Location = Location(0x239),
     val echoOfBat: Location = Location(0x23A),

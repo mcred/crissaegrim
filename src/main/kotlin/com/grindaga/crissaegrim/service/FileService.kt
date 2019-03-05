@@ -1,6 +1,7 @@
 package com.grindaga.crissaegrim.service
 
 import com.grindaga.crissaegrim.controllers.MessageController
+import com.grindaga.crissaegrim.controllers.RelicsController
 import com.grindaga.crissaegrim.controllers.StatsController
 import com.grindaga.crissaegrim.objects.Card
 import javafx.stage.FileChooser
@@ -19,6 +20,7 @@ object FileService: Component() {
     private val allFilter = FileChooser.ExtensionFilter("all files (*.*)", "*.*")
 
     private val statsCtrl: StatsController by inject()
+    private val relicsCtrl: RelicsController by inject()
     private val messageCtrl: MessageController by inject()
     private var fileLocation: String = ""
 
@@ -34,6 +36,7 @@ object FileService: Component() {
             val slot = card.slots[1]
 
             statsCtrl.loadFromSlot(slot)
+            relicsCtrl.loadFromSlot(slot)
 
         } catch (e: Exception) {
             println(e)
@@ -47,6 +50,7 @@ object FileService: Component() {
         val slot = card.slots[1]
 
         statsCtrl.writeToSlot(slot)
+        relicsCtrl.writeToSlot(slot)
 
         /*
         val file: File = when (targetFile) {

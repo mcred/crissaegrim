@@ -14,6 +14,8 @@ class Crissaegrim : App(){
         stage.isFullScreen = false
         stage.minWidth  = WINDOW_WIDTH
         stage.minHeight = WINDOW_HEIGHT
+        stage.maxHeight = WINDOW_HEIGHT
+        stage.maxWidth = WINDOW_WIDTH
     }
 }
 
