@@ -7,7 +7,6 @@ import javafx.stage.FileChooser
 import tornadofx.*
 import java.io.File
 import java.io.FileOutputStream
-import java.io.FileWriter
 
 /**
 FileService to Open and Save Memory Card Files
@@ -20,8 +19,6 @@ object FileService: Component() {
     private val allFilter = FileChooser.ExtensionFilter("all files (*.*)", "*.*")
 
     private val statsCtrl: StatsController by inject()
-    private val stats = statsCtrl.stats
-
     private var fileLocation: String = ""
 
     fun openFile(targetFile: File? = null) {
@@ -35,9 +32,7 @@ object FileService: Component() {
             val card = Card.load(fileLocation)
             val slot = card.slots[1]
 
-            val statMap = StatsMap()
-            stats.hp.setValue(slot.read(statMap.HP))
-            stats.hpMax.setValue(slot.read(statMap.HPMax))
+            statsCtrl.loadFromSlot(slot)
 
         } catch (e: Exception) {
             println(e)
@@ -49,9 +44,8 @@ object FileService: Component() {
         //TODO persist card and slot by models
         val card = Card.load(fileLocation)
         val slot = card.slots[1]
-        val statMap = StatsMap()
-        slot.write(statMap.HP, stats.hp.value.toInt())
-        slot.write(statMap.HPMax, stats.hpMax.value.toInt())
+
+        statsCtrl.writeToSlot(slot)
 
         /*
         val file: File = when (targetFile) {
