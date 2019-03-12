@@ -1,8 +1,10 @@
 package com.grindaga.crissaegrim.views
 
+import com.grindaga.crissaegrim.controllers.EquipmentController
 import com.grindaga.crissaegrim.controllers.RelicsController
 import com.grindaga.crissaegrim.controllers.StatsController
-import com.grindaga.crissaegrim.model.Relics
+import com.grindaga.crissaegrim.model.Stat
+import javafx.scene.control.TextFormatter
 import tornadofx.*
 
 class StatsView : View("My View") {
@@ -10,73 +12,72 @@ class StatsView : View("My View") {
     private val stats = statsCtrl.stats
     private val relicsCtrl: RelicsController by inject()
     private val relics = relicsCtrl.relics
+    private val equipmentCrl: EquipmentController by inject()
+
+    private val statsEditorView: StatsEditorView by inject()
+
+    private val equipment = equipmentCrl.equipment
+    private val tabWidth = 740.0/3
+
+    private val eightBitFilter: (TextFormatter.Change) -> Boolean = { change ->
+        !change.isAdded || change.controlNewText.let {
+            it.isInt() && it.toInt() in 0..255
+        }
+    }
+
+    private val sixteenBitFilter: (TextFormatter.Change) -> Boolean = { change ->
+        !change.isAdded || change.controlNewText.let {
+            val removedComma = it.replace(",", "")
+            removedComma.isInt() && removedComma.toInt() in 0..65535
+        }
+    }
 
     override val root = tabpane {
         useMaxWidth = true
 
         tab("Stats") {
             isClosable = false
-            tabMinWidth= 800.0/3
+            tabMinWidth = tabWidth
+            tabMaxWidth = tabWidth
+            statsEditorView
 
-            form {
-                fieldset("Character Stats") {
-                    field("HP") { textfield ( stats.HP ) }
-                    field("HPMax") { textfield ( stats.HPMax ) }
-                    field("Hearts") { textfield ( stats.Hearts ) }
-                    field("HeartsMax") { textfield ( stats.HeartsMax ) }
-                    field("MP") { textfield ( stats.MP ) }
-                    field("MPMax") { textfield ( stats.MPMax ) }
-                    field("STR") { textfield ( stats.STR ) }
-                    field("CON") { textfield ( stats.CON ) }
-                    field("INT") { textfield ( stats.INT ) }
-                    field("LCK") { textfield ( stats.LCK ) }
-                    field("ATTBonus") { textfield ( stats.ATTBonus ) }
-                }
-            }
         }
         tab("Equipment") {
             isClosable = false
-            tabMinWidth= 800.0/3
+            tabMinWidth = tabWidth
+            tabMaxWidth = tabWidth
 
         }
         tab("Relics") {
             isClosable = false
-            tabMinWidth= 800.0/3
+            tabMinWidth = tabWidth
+            tabMaxWidth = tabWidth
 
             form {
-                fieldset("Relics") {
-                    field("soulOfBat") {textfield (relics.soulOfBat) }
-                    field("fireOfBat") {textfield (relics.fireOfBat) }
-                    field("echoOfBat") {textfield (relics.echoOfBat) }
-                    field("forceOfEcho") {textfield (relics.forceOfEcho) }
-                    field("soulOfWolf") {textfield (relics.soulOfWolf) }
-                    field("powerOfWolf") {textfield (relics.powerOfWolf) }
-                    field("skillOfWolf") {textfield (relics.skillOfWolf) }
-                    field("formOfMist") {textfield (relics.formOfMist) }
-                    field("powerOfMist") {textfield (relics.powerOfMist) }
-                    field("gasCloud") {textfield (relics.gasCloud) }
-                    field("cubeOfZoe") {textfield (relics.cubeOfZoe) }
-                    field("spiritOrb") {textfield (relics.spiritOrb) }
-                    field("gravityBoots") {textfield (relics.gravityBoots) }
-                    field("leapStone") {textfield (relics.leapStone) }
-                    field("holySymbol") {textfield (relics.holySymbol) }
-                    field("faerieScroll") {textfield (relics.faerieScroll) }
-                    field("jewelOfOpen") {textfield (relics.jewelOfOpen) }
-                    field("mermanStatue") {textfield (relics.mermanStatue) }
-                    field("batCard") {textfield (relics.batCard) }
-                    field("ghostCard") {textfield (relics.ghostCard) }
-                    field("faerieCard") {textfield (relics.faerieCard) }
-                    field("demonCard") {textfield (relics.demonCard) }
-                    field("swordCard") {textfield (relics.swordCard) }
-                    field("heartOfVlad") {textfield (relics.heartOfVlad) }
-                    field("toothOfVlad") {textfield (relics.toothOfVlad) }
-                    field("ribOfVlad") {textfield (relics.ribOfVlad) }
-                    field("ringOfVlad") {textfield (relics.ringOfVlad) }
-                    field("eyeOfVlad") {textfield (relics.eyeOfVlad) }
+                hbox(80) {
+                    fieldset("Relics") {
+                        hbox(80) {
+                            vbox {
+                                for (relic in relics) {
+                                    field(relic.name) {
+                                        togglegroup {
+                                            togglebutton("Not Found", this, true, 0)
+                                            togglebutton("Off", this, false, 1)
+                                            togglebutton("On", this, false, 3)
+                                            bind(relic.valueProperty)
+                                        }
+                                    }
+                                }
+                            }
+
+                            vbox {
+
+                            }
+                        }
+                    }
                 }
             }
         }
-
     }
 }
 
