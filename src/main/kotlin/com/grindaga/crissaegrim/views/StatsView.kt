@@ -29,6 +29,17 @@ class StatsView : View("My View") {
         }
     }
 
+    private fun humpToCaps(hump: String): String {
+        var retString: String = ""
+        for (letter in hump) {
+            retString += when {
+                letter.isUpperCase() -> " $letter"
+                else -> letter
+            }
+        }
+        return retString.capitalize()
+    }
+
     override val root = tabpane {
         useMaxWidth = true
 
@@ -58,7 +69,7 @@ class StatsView : View("My View") {
                                 for (relic in relics) {
                                     val row: Int = count % 2
                                     if (row == 0) {
-                                        field(relic.name) {
+                                        field(humpToCaps(relic.name)) {
                                             togglegroup {
                                                 togglebutton("Not Found", this, true, 0)
                                                 togglebutton("Off", this, false, 1)
@@ -75,7 +86,7 @@ class StatsView : View("My View") {
                                 for (relic in relics) {
                                     val row: Int = count % 2
                                     if (row == 1) {
-                                        field(relic.name) {
+                                        field(humpToCaps(relic.name)) {
                                             togglegroup {
                                                 togglebutton("Not Found", this, true, 0)
                                                 togglebutton("Off", this, false, 1)
