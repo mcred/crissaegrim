@@ -3,3 +3,4 @@ target
 .idea
 bin
 coverage
+.DS_Store

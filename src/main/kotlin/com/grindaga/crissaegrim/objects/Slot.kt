@@ -1,6 +1,7 @@
 package com.grindaga.crissaegrim.objects
 
 import com.grindaga.crissaegrim.utils.Numeric
+import com.grindaga.crissaegrim.model.Location
 
 data class Slot(
     val rootAddress: Int,

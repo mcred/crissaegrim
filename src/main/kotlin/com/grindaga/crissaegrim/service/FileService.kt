@@ -1,5 +1,6 @@
 package com.grindaga.crissaegrim.service
 
+import com.grindaga.crissaegrim.controllers.EquipmentController
 import com.grindaga.crissaegrim.controllers.MessageController
 import com.grindaga.crissaegrim.controllers.RelicsController
 import com.grindaga.crissaegrim.controllers.StatsController
@@ -21,6 +22,7 @@ object FileService: Component() {
 
     private val statsCtrl: StatsController by inject()
     private val relicsCtrl: RelicsController by inject()
+    private val equipmentCtrl: EquipmentController by inject()
     private val messageCtrl: MessageController by inject()
     private var fileLocation: String = ""
 
@@ -37,6 +39,7 @@ object FileService: Component() {
 
             statsCtrl.loadFromSlot(slot)
             relicsCtrl.loadFromSlot(slot)
+            equipmentCtrl.loadFromSlot(slot)
 
         } catch (e: Exception) {
             println(e)
@@ -51,6 +54,7 @@ object FileService: Component() {
 
         statsCtrl.writeToSlot(slot)
         relicsCtrl.writeToSlot(slot)
+        equipmentCtrl.writeToSlot(slot)
 
         /*
         val file: File = when (targetFile) {
