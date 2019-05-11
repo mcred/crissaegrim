@@ -3,6 +3,11 @@ package com.grindaga.crissaegrim.views
 import com.grindaga.crissaegrim.controllers.EquipmentController
 import com.grindaga.crissaegrim.controllers.RelicsController
 import com.grindaga.crissaegrim.controllers.StatsController
+import com.grindaga.crissaegrim.model.Equipment
+import com.grindaga.crissaegrim.model.Stat
+import javafx.beans.property.Property
+import javafx.scene.control.TableView
+import javafx.scene.control.TextField
 import javafx.scene.control.TextFormatter
 import tornadofx.*
 
@@ -13,6 +18,17 @@ class StatsView : View("My View") {
     private val relics = relicsCtrl.relics
     private val equipmentCrl: EquipmentController by inject()
     private val equipment = equipmentCrl.equipment
+
+
+    var nameField : TextField by singleAssign()
+    var valueField : TextField by singleAssign()
+    var statTable : TableView<Stat> by singleAssign()
+    var prevSelection: Stat? = null
+
+    var equipmentName : TextField by singleAssign()
+    var equipmentValue : TextField by singleAssign()
+    var equipmentTable : TableView<Equipment> by singleAssign()
+    var prevEquipent: Equipment? = null
 
     private val tabWidth = 740.0/3
 
@@ -40,6 +56,30 @@ class StatsView : View("My View") {
         return retString.capitalize()
     }
 
+    private fun editStat(stat: Stat?) {
+        if (stat != null) {
+            prevSelection?.apply {
+                nameProperty.unbindBidirectional(nameField.textProperty())
+                valueProperty.unbindBidirectional(valueField.textProperty() as Property<Number>)
+            }
+            nameField.bind(stat.nameProperty)
+            valueField.bind(stat.valueProperty)
+            prevSelection = stat
+        }
+    }
+
+    private fun editEquipment(equipment: Equipment?){
+        if (equipment != null) {
+            prevSelection?.apply {
+                nameProperty.unbindBidirectional(equipmentName.textProperty())
+                valueProperty.unbindBidirectional(equipmentValue.textProperty() as Property<Number>)
+            }
+            equipmentName.bind(equipment.nameProperty)
+            equipmentValue.bind(equipment.valueProperty)
+            prevEquipent = equipment
+        }
+    }
+
     override val root = tabpane {
         useMaxWidth = true
 
@@ -48,11 +88,76 @@ class StatsView : View("My View") {
             tabMinWidth = tabWidth
             tabMaxWidth = tabWidth
 
+            borderpane{
+                center {
+                    tableview(stats) {
+                        statTable = this
+                        column("Stat", Stat::nameProperty)
+                        column("Value", Stat::valueProperty)
+
+                        selectionModel.selectedItemProperty().onChange {
+                            editStat(it)
+                            prevSelection = it
+                        }
+                    }
+                }
+
+                right {
+                    form {
+                        fieldset("Edit Stat") {
+                            field("") {
+                                textfield() {
+                                    isEditable = false
+                                    nameField = this
+                                }
+                            }
+                            field("") {
+                                textfield() {
+                                    valueField = this
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
         tab("Equipment") {
             isClosable = false
             tabMinWidth = tabWidth
             tabMaxWidth = tabWidth
+
+            borderpane{
+                center {
+                    tableview(equipment) {
+                        equipmentTable = this
+                        column("Equipment", Equipment::nameProperty)
+                        column("Quantity", Equipment::valueProperty)
+
+                        selectionModel.selectedItemProperty().onChange {
+                            editEquipment(it)
+                            prevEquipent = it
+                        }
+                    }
+                }
+
+                right {
+                    form {
+                        fieldset("Edit Equipment") {
+                            field("") {
+                                textfield() {
+                                    isEditable = false
+                                    equipmentName = this
+                                }
+                            }
+                            field("") {
+                                textfield() {
+                                    equipmentValue = this
+                                }
+                            }
+                        }
+                    }
+                }
+            }
 
         }
         tab("Relics") {
